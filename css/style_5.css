@@ -1,0 +1,171 @@
+a:link
+{
+    text-decoration: none;
+}
+body
+{
+    background-color: rgb(222, 222, 222);
+    font-family: "Microsoft YaHei UI", sans-serif;
+}
+#header
+{
+    background-color: #232526;
+    width: 100%;
+    height: 95px;
+
+}
+#header img
+{
+    margin: 20px;
+    width: 50px;
+    height: 50px;
+}
+#header ul
+{
+    float:right;
+    margin-right: 20px;
+}
+#header ul li
+{
+    float:left;
+    margin-left: 2em;
+
+}
+#header ul li a
+{
+    color:white;
+
+}
+#main
+{
+    width: 70%;
+    float: left;
+}
+#main .content
+{
+    background-color: white;
+    margin:2em 2em;
+    padding: 2em;
+    box-shadow: 2px 2px 1px #000000;
+}
+#main .content h2,#main .content h4,#main .content h6
+{
+    margin-bottom:0.5em;
+}
+#main .content p
+{
+    text-indent: 2em;
+}
+#main .message2 ul
+{
+    list-style: none;
+}
+#main .message3 .ol
+{
+    margin-left: 2em;
+}
+#main .message3 table
+{
+    width: 100%;
+}
+#main .message3 table tr:first-child
+{
+    background-color:#333333 ;
+}
+#main .message3 table tr:first-child td
+{
+    color:white ;
+}
+#main .message3 table tr:last-child
+{
+    background-color: #cccccc;
+}
+#main .message3 table td
+{
+    text-align: center;
+}
+.image img
+{
+    width:150px;
+    height:150px;
+}
+#IMAGE
+{
+    overflow: auto;
+}
+#IMAGE .image
+{
+    float:left;
+    border: 1px #eee solid;
+    margin-left: 10px;
+}
+#sider
+{
+    width: 360px;
+    background-color: white;
+    padding:1em;
+    float:right;
+    box-shadow: 2px 2px 1px #000000;
+    margin: 2em 0.8em;
+}
+#sider div
+{
+    margin-bottom: 1em;
+}
+#sider .form1 a
+{
+    margin-left: 10em;
+    font-size: 0.5em;
+}
+#sider .form2 p
+{
+    font-size: 0.5em;
+    margin-left:10em;
+}
+#sider .form3 span
+{
+    margin-left: 5em;
+
+
+}
+#sider .form3 .marg
+{
+    display: block;
+    margin-bottom: -0.8em;
+}
+#sider #submit
+{
+    width: 100%;
+    height: 2em;
+    background-color: #3355D0;
+    color: white;
+    line-height: 1.5em;
+}
+#sider #description1
+{
+    display:block;
+    float:left;
+    position: relative;
+}
+#sider #description1 label
+{
+    position: absolute;
+    top: 0px;
+}
+#sider #description1 textarea
+{
+    margin-left:5em ;
+}
+#footer
+{
+    clear: both;
+    width:100%;
+    background-color: black;
+    text-align: center;
+}
+#footer span
+{
+    color:white;
+    line-height: 2em;
+}
+

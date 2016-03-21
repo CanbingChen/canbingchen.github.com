@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>test10</title>
+    <style>
+        body
+        {
+            margin: 0px;
+            padding: 0px;
+        }
+        body ul li
+        {
+            list-style: none;
+
+        }
+        @media screen and (min-width: 641px) {
+            #parent {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+                align-items: center;
+            }
+            #parent .child {
+                width: 150px;
+                border: 1px red solid;
+                margin-bottom: 20px;
+            }
+            #parent #child_1 
+			{
+                height: 120px;
+                order: 1;
+            }
+            #parent #child_2 {
+                height: 100px;
+                order: 2;
+            }
+
+            #parent #child_3 {
+                height: 40px;
+                order: 3;
+            }
+            #parent #child_4 {
+                order: 4;
+                height: 200px;
+                border: 1px blue solid;
+            }
+        }
+        @media screen and (max-width: 640px)
+        {
+            #parent {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+                align-items: stretch;
+            }
+            #parent .child {
+                width: 150px;
+                border: 1px red solid;
+                margin-bottom: 20px;
+
+            }
+            #parent #child_1 {
+                height: 120px;
+                order: 2;
+
+            }
+            #parent #child_2 {
+                height: 100px;
+                order: 3;
+            }
+            #parent #child_3 {
+                height: 40px;
+                order: 4;
+            }
+            #parent #child_4 {
+                order: 1;
+                height: 200px;
+                border: 1px blue solid;
+            }
+        }
+    </style>
+</head>
+<body>
+<ul id="parent">
+    <li class="child" id="child_1">1</li>
+    <li class="child" id="child_2">2</li>
+    <li class="child" id="child_3">3</li>
+    <li class="child" id="child_4">4</li>
+    </ul>
+</body>
+</html>
