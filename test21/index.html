@@ -1,0 +1,99 @@
+<!Doctype>
+<html>
+<meta charset="utf-8"/>
+<head>
+    <style>
+        .blue{
+            float: left;
+            background-color:#84C8FF;
+            font-size: large;
+            color:#ffffff;
+            margin-right:10px;
+        }
+        /*.blue:hover{*/
+            /*background-color:red;*/
+        /*}*/
+        </style>
+</head>
+<body>
+<form>
+    <label for="tag">Tag</label><input name="tag" id="input1" type="text"/>
+    <div id="box1"></div>
+    <br/>
+    <label for="like"></label><textarea name="like" id="input2"></textarea>
+    </form>
+<button id="button1">确认兴趣爱好</button>
+<div id="box2"></div>
+<script type="text/javascript">
+    var newarr=[],nextarr=[];
+    var sta;
+    var input1=document.getElementById("input1");
+    var input2=document.getElementById("input2");
+    var button=document.getElementById("button1");
+    var box1=document.getElementById("box1");
+    var box2=document.getElementById("box2")
+    function norecur(arr){
+        var newarr=[];
+        for(var i= 0,j=arr.length;i<j;i++)
+        {
+            if(newarr.indexOf(arr[i])<0)
+            {
+                newarr.push(arr[i]);
+            }
+        }
+
+        return newarr;
+    }
+    function paint(newarr,box){
+        var string="";
+        newarr.forEach(function(item,index,arr){
+            string += "<div class='blue'>" + item + "</div>&nbsp";
+        });
+        box.innerHTML=string;
+    };
+    input1.addEventListener("keypress",function(e){
+        if(window.event.keyCode==13||window.event.keyCode==188||window.event.keyCode==32)
+        {
+            e.preventDefault();
+            if(newarr.indexOf(input1.value)<0) {
+                newarr.push(input1.value);
+                input1.value = "";
+            }
+            else
+            {
+                input1.value = "";
+                return false;
+            }
+        }
+        paint(newarr,box1);
+    },false);
+    box1.addEventListener("click",function(e){
+        var e = e || window.event;
+        var Target = e.srcElement || e.target;
+    if(Target.tagName.toUpperCase()=="DIV")
+    {
+        var text=Target.innerText;
+       newarr.splice(newarr.indexOf(text),1);
+        paint(newarr,box1);
+    }
+    });
+    box1.addEventListener("mouseover",function(e){
+        var e = e || window.event;
+        var Target = e.srcElement || e.target;
+        if(Target.className.toUpperCase()=="BLUE")
+        {
+            Target.style.backgroundColor="red";
+            Target.innerText="点击删除"+Target.innerText;
+        }
+    },false);
+    box1.addEventListener("mouseout",function(e){
+        paint(newarr,box1);
+    },true);
+    button.addEventListener("click",function(){
+        var likemessage=input2.value.split(/[\s\,\，\.]/gi);
+        nextarr=norecur(likemessage);
+        paint(nextarr,box2);
+    },false);
+    </script>
+</body>
+</html>

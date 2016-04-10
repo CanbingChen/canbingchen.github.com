@@ -1,0 +1,57 @@
+<!doctype>
+<html>
+<head>
+    <style>
+        .blue{
+            background-color: aqua;
+            float: left;
+            margin-right: 20px;
+        }
+        </style>
+</head>
+<body>
+<form>
+    <label for="number"></label><input name="number" type="text" id="input1"/>
+    </form>
+<button id="left-in">×ó²à½ø</button>
+<button id="right-in">ÓÒ²à½ø</button>
+<button id="left-out">×ó²à³ö</button>
+<button id="right-out">×ó²à³ö</button>
+<div id="box">
+    </div>
+<script type="text/javascript">
+    var newarr=[];
+    var number=document.getElementById("input1");
+    var leftin=document.getElementById("left-in");
+    var rightin=document.getElementById("right-in");
+    var leftout=document.getElementById("left-out");
+    var rightout=document.getElementById("right-out");
+    function paint(newarr){
+        var box=document.getElementById("box");
+        var string="";
+        newarr.forEach(function(item,index,arr){
+            string += "<div class='blue'>" + item + "</div>&nbsp";
+        });
+        box.innerHTML=string;
+    };
+    leftin.addEventListener("click",function(){
+        newarr.unshift(number.value);
+        paint(newarr);
+        console.log(newarr);
+    },false);
+    rightin.addEventListener("click",function(){
+        newarr.push(number.value);
+        paint(newarr);
+        console.log(newarr);
+    },false);
+    leftout.addEventListener("click",function(){
+        newarr.shift();
+        paint(newarr);
+    },false);
+    rightout.addEventListener("click",function(){
+        newarr.pop();
+        paint(newarr);
+    },false)
+</script>
+</body>
+</html>

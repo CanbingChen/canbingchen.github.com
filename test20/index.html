@@ -1,0 +1,80 @@
+<!doctype>
+<html>
+<head>
+    <style>
+        .blue{
+            background-color: aqua;
+            float: left;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <textarea id="input1"></textarea>
+</form>
+<button id="left-in">×ó²à½ø</button>
+<button id="right-in">ÓÒ²à½ø</button>
+<button id="left-out">×ó²à³ö</button>
+<button id="right-out">×ó²à³ö</button>
+<input name="number" type="text" id="input2"/>
+<button id="search">²éÕÒ</button>
+<div id="box">
+</div>
+<script type="text/javascript">
+    var newarr=[];
+    var search=document.getElementById("search");
+    var number=document.getElementById("input1");
+    var leftin=document.getElementById("left-in");
+    var rightin=document.getElementById("right-in");
+    var leftout=document.getElementById("left-out");
+    var rightout=document.getElementById("right-out");
+    function paint(newarr){
+        var box=document.getElementById("box");
+        var string="";
+        newarr.forEach(function(item,index,arr){
+            string += "<div class='blue'>" + item + "</div>&nbsp";
+        });
+        box.innerHTML=string;
+    };
+    leftin.addEventListener("click",function(){
+        var arr=number.value.split(/[\s\,\£¬\.]/gi);
+        for(var i= 0,j=arr.length;i<j;i++) {
+            newarr.unshift(arr[i]);
+        }
+        paint(newarr);
+    },false);
+    rightin.addEventListener("click",function(){
+        var arr=number.value.split(/[\s\,\£¬\.]/gi);
+        for(var i= 0,j=arr.length;i<j;i++) {
+            newarr.push(arr[i]);
+        }
+        paint(newarr);
+    },false);
+    leftout.addEventListener("click",function(){
+        newarr.shift();
+        paint(newarr);
+    },false);
+    rightout.addEventListener("click",function(){
+        newarr.pop();
+        paint(newarr);
+    },false);
+    search.addEventListener("click",function(){
+        var value=new RegExp(input2.value);
+        var box=document.getElementById("box");
+        var string="";
+        newarr.forEach(function(item,index,arr){
+            if(value.test(item))
+            {
+                string += "<div style='color:white' class='blue'>" + item + "</div>&nbsp";
+            }
+            else {
+                string += "<div class='blue'>" + item + "</div>&nbsp";
+            }
+        });
+        console.log(string);
+        box.innerHTML=string;
+    },false)
+</script>
+</body>
+</html>

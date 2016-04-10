@@ -8,12 +8,19 @@
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <style>
+        body{
+            background-color:  rgb(222, 222, 222);
+        }
+        .box{
+           margin: 20px;
+            box-shadow: 2px 2px 1px #000000;
+            background-color: white;
+        }
  .sidebar
         {
             background: #6ecadc;
             top: 0px;
             padding: 4em 30px;
-            height:100%;
         }
         .sidebar img {
             border: 1px solid #fff;
@@ -57,14 +64,24 @@
             padding: 5px 41px 5px 30px;
             display: inline-block;
         }
-         .introduce h4,.like h4,.skill h4
+         .introduce h4,.like h4,.skill h4,.experience h4
          {
             color: #999;
             font-weight: 300;
             line-height: 1.7em;
              border-bottom: 3px dashed #999;
              padding-bottom: 1em;
+             text-indent: 2em;
         }
+        .introduce p,.like p,.skill p,.experience p{
+            text-indent: 2em;
+        }
+         .experience h3{
+             background-color:#09F10F ;
+             color: #FFF;
+             padding: 5px 41px 5px 30px;
+             display: inline-block;
+         }
         .like h3
         {
             background-color: #3eb991;
@@ -79,10 +96,13 @@
          padding: 5px 41px 5px 30px;
          display: inline-block;
          }
+        #box2{
+            opacity: 0;
+        }
         </style>
 </head>
 <body>
-<div class="container-fluid ">
+<div class="container-fluid box">
     <div class="col-sm-3 col-md-2 sidebar">
         <div class="sidebar_top">
             <h1>陈灿冰</h1>
@@ -107,22 +127,75 @@
         <div class="introduce">
             <h3 class="introduce_myself">自我介绍</h3>
             <h4>
-                我叫陈灿冰，现在还在还是西南石油大学的一名大三的学生，我接触js是在大二下学期末。之前接触了一些3d漫游，微信平台开发之类的工作，过后我根据自己的喜好，决定了要好好学习前端知识。刚开始学习前端还是一味地通过看书自学，然后到网络上去找各种资料。刚开始的道路是很艰难的，但是很庆幸，我坚持了下来。现在的我，对html,css,js,以及一些框架有了一些了解。对git或者github也可以熟练地应用。现在我希望能够在一个系统的环境里继续学习下去，我希望老师您能给我一个机会，我相信，只要你能给我一个机会，我一定不会让您失望的。
+                我叫陈灿冰，现在还在还是西南石油大学的一名大三的学生，我接触js是在大二下学期末。之前
+                接触了一些3d漫游，微信平台开发之类的工作，过后我根据自己的喜好，决定了要好好学习前
+                端知识。刚开始学习前端还是一味地通过看书自学，然后到网络上去找各种资料。刚开始的道路是很艰难的，但是很庆幸，我坚持了下来。现在的我，对html,css,js,以及一些框架有了一些了解。对git或者github也可以熟练地应用。现在我希望能够在一个系统的环境里继续学习下去，我希望老师您能给我一个机会，我相信，只要你能给我一个机会，我一定不会让您失望的。
             </h4>
-            </div>
+        </div>
         <div class="like">
             <h3>我的喜好</h3>
-            <h4>我是一个喜欢交朋友的人，性格很开朗大方。我喜欢打篮球，打得还可以，在高中和大学的时候经常代表学院参加比赛；在平常的时候我也会去骑行，多出去看看；我也喜欢打一些有些，比如英雄联盟，红色警戒，魔兽争霸之类的。</h4>
-            </div>
+            <h4>我是一个喜欢交朋友的人，性格很开朗大方。我喜欢打篮球，打得还可以，在高中和大学的时候经常代表学院参加比赛；在平常的时候我也会去骑行，多出去看看；我也喜欢打一些游戏，比如英雄联盟，红色警戒，魔兽争霸之类的。
+            </h4>
+        </div>
+
+        </div>
+</div>
+<div class="container-fluid box" id="box2">
+    <div class="col-sm-3 col-md-2 sidebar">
+        <div class="sidebar_top">
+            <h1>陈灿冰</h1>
+            <img src="images/ccb.jpeg" alt=""/>
+        </div>
+        <div class="details">
+            <h3>PHONE</h3>
+            <p>+86 18280344364</p>
+            <h3>EMAIL</h3>
+            <p><a href="291618566@qq.com">291618566@qq.com</a></p>
+            <address>
+                <h3>ADDRESS</h3>
+                <span>四川省,</span>
+                <span>邻水县</span>
+                <span>达子丘金穗花园</span>
+            </address>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="col-sm-9  col-md-10  main">
+        <div class="experience">
+            <h3 class="experience1">项目经验</h3>
+            <h4> <p> <a href="http://cins.swpu.edu.cn">http://cins.swpu.edu.cn</a>这个我一步一步从零到有，自己一步一步搭建起来的，后台我用的wordpress，主要是觉得比较方便的原因</p>
+                <p> <a href="http://119.6.203.96/">http://119.6.203.96/</a>这个是我做的项目，通过ajax和ejs获取数据，然后批量的修改页面的内容，现在可能无法访问（后台处于维护状态）</p>
+                <p><a href="http://CanbingChen.github.io">CanbingChen.github.io</a>这是我最近参加</h4>
+        </div>
         <div class="skill">
             <h3>技巧</h3>
             <h4>我大学的专业就是计算机，对于c,c++和C#有一些了解。对于前端知识，由于自己的爱好，加上做了一些项目，对于html，css和js有一些认识，也能比较熟练地应用这些知识。
-               <p> <a href="http://cins.swpu.edu.cn">http://cins.swpu.edu.cn</a>这个我一步一步从零到有，自己一步一步搭建起来的，后台我用的wordpress，主要是觉得比较方便的原因</p>
-               <p> <a href="http://119.6.203.96/">http://119.6.203.96/</a>这个是我做的项目，通过ajax和ejs获取数据，然后批量的修改页面的内容，现在可能无法访问（后台处于维护状态）</p>
-                <p><a href="http://CanbingChen.github.io">CanbingChen.github.io</a>这是我最近参加百度前端技术学院练手的一些东西，内容还在不断更新中</p>
+                <p>了解HTML经常使用的标签，也比较了解HTML的语义化标签，能熟练运用html标签，自己也尝试过html5的一些新特性，比如
+                    section和canvas</p>
+                <p>能比较熟练适用css和css3的属性，对flex布局也有一些认识，</p>
+                <p>对于javascript,明白作用域，块级作用域以及原型链。在项目的实际运用中，让我对ajax有了一些实践的经历。现在对于事件冒泡也有了
+                    更多的理解，能熟练的使用事件代理。对数据的处理也能比较熟练。对于不知道的API也能通过查文档进行使用。
+                </p>
+                <p>能比较熟练的运用git进行项目开发</p>
+                <p>能比较熟练的运用jquery和bootstrap,对于bootstrap栅格布局。现在着重理解原型js，希望通过原型的js实现一些效果，虽然比较麻烦，但对js的理解会更
+                    进一步。同时现在也在学习百度的可视化框架Echats</p>
+                <p></p>
+                <p>知道一些php的一些知识，曾经也试着做过一些简单的数据库查询模拟登陆注册的功能</p>
+                <p>能够使用sqlserver和mysql</p>
+                <p>能使用photoshop对图片进行裁剪格式转换</p>
+                百度前端技术学院练手的一些东西，内容还在不断更新中</p>
             </h4>
-            </div>
         </div>
-</div>
+        </div>
+            </div>
+<script type="text/javascript">
+    window.onscroll=function(){
+        var t = document.documentElement.scrollTop || document.body.scrollTop;
+        if(t>400)
+        {
+            $("#box2").animate({opacity:'1'},"6000");
+        }
+    }
+    </script>
 </body>
 </html>

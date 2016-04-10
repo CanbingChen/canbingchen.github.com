@@ -1,0 +1,93 @@
+<!doctype>
+<html>
+<meta charset="utf-8"/>
+<head>
+    <style>
+        .tree
+        {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+            float: left;
+            background-color: brown;
+        }
+        </style>
+</head>
+<body>
+<div id="box">
+    </div>
+<script type="text/javascript">
+var zNodes=[
+    {id:1,pId:0,name:"A"},
+    {id:2,pId:1,name:"B"},
+    {id:3,pId:1,name:"C"},
+    {id:4,pId:2,name:"D"},
+    {id:5,pId:2,name:"E"},
+    {id:6,pId:3,name:"F"},
+    {id:7,pId:3,name:"G"},
+    {id:8,pId:4,name:"H"},
+    {id:9,pId:4,name:"J"},
+    {id:10,pId:5,name:"K"},
+    {id:11,pId:5,name:"L"},
+    {id:12,pId:6,name:"M"},
+    {id:13,pId:6,name:"N"},
+    {id:14,pId:7,name:"O"},
+    {id:15,pId:7,name:"P"},
+];
+function treeMenu(a){
+    this.tree=a||[];
+    this.groups={};
+};
+treeMenu.prototype={
+    init:function(pid){
+        this.group();
+        return this.getDom(this.groups[pid]);
+    },
+    group:function(){
+        for(var i=0;i<this.tree.length;i++){
+            if(this.groups[this.tree[i].pId]){
+                this.groups[this.tree[i].pId].push(this.tree[i]);
+            }else{
+                this.groups[this.tree[i].pId]=[];
+                this.groups[this.tree[i].pId].push(this.tree[i]);
+            }
+        }
+    },
+    getDom:function(a){
+        if(!a){return ''}
+        var html="";
+        for(var i=0;i<a.length;i++){
+            html+='<div class="tree" id="'+a[i].id+'">'+a[i].name;
+            html+=this.getDom(this.groups[a[i].id]);
+            html+='</div>\n';
+        };
+        return html;
+    }
+};
+var html=new treeMenu(zNodes).init(0);
+html+="<button id='width'>广度优先遍历</button><button id='depth'>深度优先遍历</button>"
+var body=document.getElementById("box");
+    body.innerHTML=html;
+var width=document.getElementById("width");
+var depth=document.getElementById("depth");
+function paint(index){
+    var i = document.getElementById(index);
+    if(index>1) {
+        var j = document.getElementById(index-1);
+        j.style.backgroundColor = "brown";
+    }
+    i.style.backgroundColor = "white";
+}
+    width.addEventListener("click",function(){
+        for(var i= 1;i<16;i++) {
+            (function(i){
+                setTimeout(function(){
+                    paint(i);
+                },i*1000);
+            })(i);
+        }
+    },false)
+
+    </script>
+</body>
+</html>

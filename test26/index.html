@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="gbk">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>飞船</title>
+    <style>
+        body{
+            background-color: black;
+            color: #ffffff;
+        }
+        #track4{
+            width: 1000px;
+            height: 1000px;
+            border: 2px white solid;
+            border-radius: 100%;
+            position: relative;
+        }
+        #track4 #sun{
+            position: absolute;
+            top: 400px;
+            left:400px;
+            width: 200px;
+            height: 200px;
+            background-color: crimson;
+            border-radius: 100%;
+        }
+        #track4 #track1{
+            position: absolute;
+            top: 300px;
+            left:300px;
+            width: 400px;
+            height: 400px;
+            border: 2px white solid;
+            border-radius: 100%;
+        }
+        #track4 #track2{
+              position: absolute;
+              top: 200px;
+              left:200px;
+              width: 600px;
+              height: 600px;
+              border: 2px white solid;
+              border-radius: 100%;
+          }
+        #track4 #track3{
+            position: absolute;
+            top: 100px;
+            left:100px;
+            width: 800px;
+            height: 800px;
+            border: 2px white solid;
+            border-radius: 100%;
+        }
+        .feichuan{
+            width: 76px;
+            height: 50%;
+            left: 44%;
+            top: -19px;
+            position: absolute;
+        }
+        .feichuan div{
+            height: 30px;
+            background-color: chartreuse;
+            border-radius:10px;
+        }
+        #console{
+            position: fixed;
+            top: 0px;
+            right: 0px;
+            width: 50%;
+        }
+        #console .header{
+            width: 100%;
+            height: 33px;
+            background-color:firebrick;
+            line-height: 33px;
+            padding-left: 20px;
+        }
+        #console #content{
+            background-color: darkcyan;
+            height: 200px;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+<div id="control">
+    <ul>
+        <li id="line1">第一轨道<button class="create">创建飞船</button>&nbsp
+            <button class="fly">fly</button><input type="number"/><button>设置速度</button></li>
+        <li id="line2">第二轨道<button class="create">创建飞船</button>&nbsp
+            <button class="fly">fly</button><input type="number"/><button>设置速度</button></li>
+        <li id="line3">第三轨道<button class="create">创建飞船</button>&nbsp
+            <button class="fly">fly</button><input type="number"/><button>设置速度</button></li>
+        <li id="line4">第四轨道<button class="create">创建飞船</button>&nbsp
+            <button class="fly">fly</button><input type="number"/><button>设置速度</button></li>
+    </ul>
+</div>
+<div id="track4" class="track">
+    <div id="sun" class="track"></div>
+    <div id="track1" class="track"></div>
+    <div id="track2" class="track"></div>
+    <div id="track3" class="track"></div>
+</div>
+<div id="console">
+    <div class="header">
+        console控制台
+    </div>
+    <div id="content">
+    </div>
+    </div>
+<script type="text/javascript">
+    var control=document.getElementById("control");
+    var order={
+        id:0,
+        commond:"stop",
+        speed:20
+    };
+    control.addEventListener("click",function(e){
+        var e = e || window.event;
+        var Target = e.srcElement || e.target;
+        if(Target.className.toUpperCase()=="CREATE")
+        {
+            var id=Target.parentElement.id.substring(4,5);
+            switch (id){
+                case '1':
+                    var set=document.getElementById("track1");
+                    set.innerHTML="<div class='feichuan' id='ship1'><div><div></div>";
+                    break;
+                case '2':
+                    var set=document.getElementById("track2");
+                    set.innerHTML="<div class='feichuan' id='ship2'><div></div></div>";
+                    break;
+                case '3':
+                    var set=document.getElementById("track3");
+                    set.innerHTML="<div class='feichuan' id='ship3'><div></div></div>";
+                    break;
+                case '4':
+                    var set=document.getElementById("track4");
+                    set.innerHTML+="<div class='feichuan' id='ship4'><div></div></div>";
+                    break;
+                default :
+
+
+            }
+        }
+            if(Target.className.toUpperCase()=="FLY") {
+                var fid = Target.parentElement.id.substring(4, 5);
+                order.commond='fly';
+                switch (fid){
+                    case '1':
+                        order.id=1;
+
+                        var fly=document.getElementById("ship1");
+                        setInterval(function(){
+                            fly.style.transformOrigin="50% 100%";
+                            fly.style.transform+='rotate(1deg)';
+                        },100);
+                        break;
+                    case '2':
+                        order.id=2;
+                        var fly=document.getElementById("ship2");
+                        setInterval(function(){
+                            fly.style.transformOrigin="50% 100%";
+                            fly.style.transform+='rotate(1deg)';
+                        },100);
+                        break;
+                    case '3':
+                        order.id=3;
+                        var fly=document.getElementById("ship3");
+                        setInterval(function(){
+                            fly.style.transformOrigin="50% 100%";
+                            fly.style.transform+='rotate(1deg)';
+                        },100);
+                        break;
+                    case '4':
+                        order.id=4;
+                        var fly=document.getElementById("ship4");
+                        setInterval(function(){
+                            fly.style.transformOrigin="50% 100%";
+                            fly.style.transform+='rotate(1deg)';
+                        },100);
+                        break;
+                }
+            }
+        console.log(order);
+    },false)
+    </script>
+</body>
+</html>

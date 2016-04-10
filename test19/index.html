@@ -1,0 +1,115 @@
+<!doctype>
+<html>
+<head>
+    <style>
+        #box{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: flex-end;
+
+        }
+        .blue{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <label for="number"></label><input name="number" type="text" id="input1"/>
+</form>
+<button id="left-in">左侧进</button>
+<button id="right-in">右侧进</button>
+<button id="left-out">左侧出</button>
+<button id="right-out">左侧出</button>
+<button id="random">随机生成数据</button>
+<button id="sequence">排序</button>
+<div id="box">
+</div>
+<script type="text/javascript">
+    var newarr=[];
+    var sequence=document.getElementById("sequence");
+    var random=document.getElementById("random");
+    var number=document.getElementById("input1");
+    var leftin=document.getElementById("left-in");
+    var rightin=document.getElementById("right-in");
+    var leftout=document.getElementById("left-out");
+    var rightout=document.getElementById("right-out");
+    function paint(newarr){
+        var box=document.getElementById("box");
+        var string="";
+        var color=['#F00D0D','#EC701A','#F7EB13','#0DF150','#12B3F8','#3F48CC',"F409F7",
+        '#F06315','#EC165D','#08C4F6'];
+        newarr.forEach(function(item,index,arr){
+            var ccb=Math.floor(Math.random()*10);
+            console.log(ccb);
+            string += "<div style='height:"+item+"px;background-color:"+color[ccb]+"' class='blue'>" + item +
+                    "</div>&nbsp";
+        });
+        box.innerHTML=string;
+    };
+    number,addEventListener("keypress",function(){
+        if(newarr.length==60)
+        {
+            alert("数组达到60最大长度");
+            number.value="";
+            return false;
+        }
+    },false);
+    random.addEventListener("click",function(){
+        for(var i= 0,j=newarr.length;i<(60-j);i++)
+        {
+            newarr.push(Math.ceil(Math.random()*100));
+        }
+        paint(newarr);
+        console.log(newarr.length);
+    },false)
+    leftin.addEventListener("click",function(){
+        if(number.value<10||number.value>100)
+        {
+            alert("输入错误，请重新输入");
+            number.value="";
+            return false;
+        }
+        newarr.unshift(number.value);
+        paint(newarr);
+
+    },false);
+    rightin.addEventListener("click",function(){
+        if(number.value<10||number.value>100)
+        {
+            alert("输入错误，请重新输入");
+            number.value="";
+            return false;
+        }
+        newarr.push(number.value);
+        paint(newarr);
+
+    },false);
+    leftout.addEventListener("click",function(){
+        newarr.shift();
+        paint(newarr);
+    },false);
+    rightout.addEventListener("click",function(){
+        newarr.pop();
+        paint(newarr);
+    },false);
+    sequence.addEventListener("click",function(){
+        for(var i= 0,j=newarr.length;i<j;i++)
+        {
+            for(var a=0;a<j-i;a++)
+            {
+                var item;
+                if(newarr[a]>newarr[a+1])
+                {
+                    item=newarr[a+1];
+                    newarr[a+1]=newarr[a];
+                    newarr[a]=item;
+                }
+            }
+        }
+        paint(newarr);
+    },false);
+</script>
+</body>
+</html>
