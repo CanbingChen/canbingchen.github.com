@@ -1,0 +1,225 @@
+body{
+    background: #383933 url(../img/bg.jpg) no-repeat center 0;
+    font-family: Arial, sans-serif;
+    color: #b8b8b8;
+    font-size: 11px;
+    line-height: 16px;
+}
+a,a:hover, a:link{
+    text-decoration:none;
+    color: #fff;
+    cursor: pointer;
+}
+
+#box{
+    width: 950px;
+    margin: 100px auto;
+    background-color: black;
+    opacity: 0.8;
+}
+#header{
+    height: 107px;
+    background: url(../img/header-bg.gif) repeat-x 0 bottom;
+}
+#header h1{
+    width:325px;
+    float: left;
+}
+#header h1 a{
+
+    height:110px;
+    line-height:110px ;
+    font-size: 0.7em;
+    margin-left: 20px;
+}
+#header h1 a strong{
+    font-size: 1.5em;
+    color: #efd125;
+}
+#header #nav{
+    float: left;
+    height:110px;
+    display: flex;
+    align-items:center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#header #nav>ul{
+    list-style: none;
+    font-size: 20px;
+}
+#header #nav>ul>li{
+    float: left;
+    margin-left: 20px;
+    font-weight:bold;
+}
+#header #nav>ul>li:hover a{
+    color:#efd125;
+}
+#content{
+    width: 913px;
+    margin-left: 12px;
+    overflow: hidden;
+}
+#content>#sidebar{
+}
+#content>#sidebar>.links{
+    padding-top: 15px;
+    margin-bottom: 5px;
+}
+#content>#sidebar>.links>a{
+    display: inline-block;
+    width: 40%;
+    height: 30px;
+    line-height: 33px;
+    text-align: center;
+    border-top: 2px #efd125 solid;
+    background: url(../img/links.gif) repeat-x;
+}
+#content>#sidebar>.links>a.right{
+    float: right;
+}
+.news{
+    margin-bottom: 14px;
+    color: #fff;
+
+
+
+}
+.news>h2{
+    font-size: 16px;
+    line-height: 33px;
+    color: #000000;
+    margin: 0px;
+    background-color: #efd125;
+    background-image:url(../img/h2-small.gif);
+    background-repeat: no-repeat;
+    background-position: right 0;
+    padding-left: 10px;
+}
+.news>ul{
+    list-style: none;
+    padding-left: 7px;
+    padding-top: 14px;
+}
+.news>ul>li{
+    padding-bottom: 7px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 10px;
+    background-color:#242424 ;
+}
+.news>ul>li>span{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+.news>ul>li>a{
+    float: left;
+    margin-right: 6px;
+}
+.news>ul>li>a>img{
+    width: 70px;
+    height: 70px;
+    display: block;
+    border: solid 1px #eed025;
+    padding: 1px;
+}
+.news>ul>li>div{
+    overflow: hidden;
+    display: inline;
+
+}
+.news>ul>li>div>span{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    color:#f9de32;
+    font-size: 2em;
+}
+.news>ul>li h5{
+    margin-bottom: 4px;
+    font-size: 15px;
+    color: #fff;
+}
+.news>ul>li p{
+    margin: 0px;
+    font-size: 11px;
+    color: #b8b8b8;
+}
+#content>#main{
+    width:62%;
+    float: left;
+    height: 200px;
+    margin-left: 10px;
+}
+#content>#main>#show{
+    position: relative;
+    height: 300px;
+    background-color:#242424 ;
+
+}
+#content>#main>#show>img{
+    position: absolute;
+    top:7px;
+    left:7px;
+    width: 550px;
+    height:286px;
+    display: none;
+}
+#content>#main>#show>img.show{
+    display: block;
+}
+#content>#main>#show>ul{
+    position: absolute;
+    top:0px;
+    right:-31px;
+    list-style: none;
+}
+#content>#main>#show>ul>li{
+    width: 27px;
+    padding-left: 6px;
+    height: 27px;
+    margin-bottom: 10px;
+}
+#content>#main>#show>ul>li.active{
+    background: url(../img/yellow-arr.gif) no-repeat 0 8px;
+}
+#content>#main>#show>ul>li.active>a{
+    background-color: #f9de32;
+}
+#content>#main>#show>ul>li>a{
+    width: 27px;
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+    line-height: 27px;
+    background: #fff;
+    float: left;
+    text-decoration: none;
+}
+#star{
+    overflow: hidden;
+}
+#star>ul{
+    list-style: none;
+    padding-left: 7px;
+    padding-top: 14px;
+}
+#star>ul>li{
+    padding-bottom: 7px;
+    float: left;
+    margin-right: 2px;
+}
+#star>ul>li>a{
+    color: #efd125;
+    text-decoration: underline;
+}
+#star>ul>li>.img{
+    display: block;
+    padding: 1px;
+}
+#star>ul>li img{
+    width: 182px;
+    height: 137px;
+}
