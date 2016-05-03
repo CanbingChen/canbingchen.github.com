@@ -1,0 +1,32 @@
+<!Doctype>
+<html>
+<meta charset="utf-8"/>
+<head>
+</head>
+<body>
+<table border="2">
+    <tr><td>输入值</td><td>两倍结果</td><td>四倍结果</td></tr>
+<tr><td><input type="number" id="input1"/></td><td><span id="span1"></span></td><td><a id="1"></a></td></tr>
+    <tr><td> <input type="number" id="input2"/></td><td><span id="span2"></span></td><td><a id="2"></a></td></tr>
+    <tr><td> <input type="number" id="input3"/></td><td><span id="span3"></span></td><td><a id="3"></a></td></tr>
+    <tr><td> <input type="number" id="input4"/></td><td><span id="span4"></span></td><td><a id="4"></a></td></tr>
+    <tr><td colspan="3"><button id="button">计算</button></td>
+</table>
+</body>
+<script type="text/javascript">
+var input=[],span=[],number=[];
+    for(var i=1;i<5;i++)
+    {
+        input.push(document.getElementById("input"+i));
+        span.push(document.getElementById("span"+i));
+        number.push(document.getElementById(i));
+    }
+var button=document.getElementById("button");
+    button.addEventListener("click",function(){
+        input.forEach(function(item,index){
+           span[index].innerText=item.value*2;
+            number[index].innerText=item.value*4;
+        })
+    },false);
+</script>
+</html>
