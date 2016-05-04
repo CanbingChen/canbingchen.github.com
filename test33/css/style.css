@@ -1,0 +1,50 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#box{
+
+}
+#box table tr td{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    position: relative;
+}
+#box table tr:nth-child(n+2) td:nth-child(n+2){
+    border: 1px solid #000;
+}
+.bottom,.top,.left,.right{
+    background-color: red;
+}
+#box table tr td div{
+    position: absolute;
+    background-color: blue;
+}
+.left div{
+    top: 0px;
+    left: 0px;
+    width: 20%;
+    height: 100%;
+}
+.right div{
+    top: 0px;
+    right: 0px;
+    width: 20%;
+    height: 100%;
+}
+.top div{
+    top: 0px;
+    height: 20%;
+    width : 100%;
+}
+.bottom div{
+    bottom: 0px;
+    height: 20%;
+    width : 100%;
+}
