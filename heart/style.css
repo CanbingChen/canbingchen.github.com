@@ -1,0 +1,101 @@
+
+#heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+}
+#heart:before,
+#heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: red;
+    -moz-border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    -o-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+}
+#heart:after {
+    left: 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    -o-transform-origin: 100% 100%;
+    transform-origin :100% 100%;
+}
+
+#yin-yang {
+    width: 96px;
+    height: 48px;
+    background: #eee;
+    border-color: red;
+    border-style: solid;
+    border-width: 2px 2px 50px 2px;
+    border-radius: 100%;
+    position: relative;
+}
+
+#yin-yang:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background: #eee;
+    border: 18px solid red;
+    border-radius: 100%;
+    width: 12px;
+    height: 12px;
+}
+
+#yin-yang:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: red;
+    border: 18px solid #eee;
+    border-radius:100%;
+    width: 12px;
+    height: 12px;
+}
+.container {
+    width: 80%;
+    margin: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    min-width: 620px;
+    max-width: 1766px;
+}
+
+img {
+    display: block;
+    float: left;
+    width: 100%;
+    height: auto;
+    shape-outside: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/28727/wine-jug-shape.png");
+    shape-image-threshold: 0.9;
+    shape-margin: 20px;
+}
+
+p {
+    padding-top: 17%;
+    padding-right: 35%;
+    line-height: 1.3;
+}
